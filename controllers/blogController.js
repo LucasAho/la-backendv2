@@ -21,14 +21,14 @@ const getPostById = asyncHandler(async (req, res) => {
 
 });
 
-const createPost = asyncHandler(async (req, res) => {
-    console.log(req.body);
-    //if (!req.body.title || !req.body.)
-    res.status(200);
-});
+// const createPost = asyncHandler(async (req, res) => {
+//     console.log(req.body);
+//     //if (!req.body.title || !req.body.)
+//     res.status(200);
+// });
 
 module.exports = {
     getPosts,
     getPostById,
-    createPost
+    //createPost
 }
