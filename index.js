@@ -12,6 +12,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors({ origin: true }));
 
 app.use('/api/blog', require('./routes/blogRoutes'));
 app.use('/api/tukren', require('./routes/wordRoutes'));
