@@ -10,11 +10,14 @@ const postSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please include a blurb']
     },
-    paragraphs: [
-        {
-            type: String,
-        }
-    ],
+    paragraphs: [{
+        Title: {
+            type: String
+        },
+        Content: [{
+            type: String
+        }]
+    }],
     image: {
         type: String,
         trim: true,
