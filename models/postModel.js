@@ -15,6 +15,11 @@ const postSchema = mongoose.Schema({
             type: String,
         }
     ],
+    sectionTitles: [
+        {
+            type: String,
+        }
+    ],
     image: {
         type: String,
         trim: true,
