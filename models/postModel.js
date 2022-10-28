@@ -12,11 +12,17 @@ const postSchema = mongoose.Schema({
     },
     paragraphs: [{
         Title: {
-            type: String
+            type: String,
+            required: true
         },
         Content: [{
+            type: String,
+            required: true
+        }],
+        ContentType: {
             type: String
-        }]
+        }
+
     }],
     image: {
         type: String,
