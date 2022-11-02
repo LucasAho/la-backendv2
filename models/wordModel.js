@@ -28,6 +28,9 @@ const tukrenWordSchema = new mongoose.Schema({
     etymology: {
         type: String
     },
+    pronounciation: {
+        type: String
+    },
 }, {
     timestamps: true
 })

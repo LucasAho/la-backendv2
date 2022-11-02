@@ -18,6 +18,8 @@ app.use(cors({ origin: true }));
 app.use('/api/blog', require('./routes/blogRoutes'));
 app.use('/api/tukren', require('./routes/wordRoutes'));
 
+
+
 app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
