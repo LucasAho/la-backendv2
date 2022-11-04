@@ -4,6 +4,7 @@ const tukrenWordSchema = new mongoose.Schema({
     conlang: {
         type: String,
         trim: true,
+        unique: true,
         required: [true, 'Please include Tukren word']
     },
     english: {

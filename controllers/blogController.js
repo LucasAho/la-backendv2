@@ -31,6 +31,17 @@ const getPostsByGenre = asyncHandler(async (req, res) => {
 
     res.status(200).json(posts);
 });
+const getPostsByGenreExclude = asyncHandler(async (req, res) => {
+    const posts = await Post.find({ genre: { $ne: req.params.genre } }, ['title', 'dateWritten', 'blurb', 'image']);
+
+    if (!posts) {
+        res.status(400);
+        throw new Error('Post not found');
+    }
+
+    res.status(200).json(posts);
+});
+
 
 const getOtherPostsInGenre = asyncHandler(async (req, res) => {
     const posts = await Post.find({ _id: { $ne: req.params.excludedId }, genre: req.params.genre });
@@ -52,6 +63,7 @@ const getOtherPostsInGenre = asyncHandler(async (req, res) => {
 module.exports = {
     getPosts,
     getPostsByGenre,
+    getPostsByGenreExclude,
     getOtherPostsInGenre,
     getPostById
     //createPost
